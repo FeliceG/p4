@@ -40,23 +40,23 @@
 
 						<br>
 						<span class="bold">Background and Objectives</span><br>
-						<textarea rows="7" cols="120" name="background" id="background" form="research_form" placeholder="Please provide information in 150 words or less." value='{{old('background', 'Please provide Background and Objectives for your research in 300 words or less.') }}' ></textarea><br>
+						<textarea rows="7" cols="120" name="background" id="background" form="research_form" placeholder="Please provide information in 100 words or less." value='{{old('background', 'Please provide Background and Objectives for your research in 100 words or less.') }}' ></textarea><br>
 
 						<br>
 						<span class="bold">Design and Methods</span><br>
-						<textarea rows="7" cols="120" name="design" id="design" form="research_form" value='{{old('design', 'Please provide Design and Methods for your research in 150 words or less.') }}' placeholder="Please provide information in 300 words or less."></textarea><br>
+						<textarea rows="7" cols="120" name="design" id="design" form="research_form" value='{{old('design', 'Please provide Design and Methods for your research in 100 words or less.') }}' placeholder="Please provide information in 100 words or less."></textarea><br>
 
 						<br>
 						<span class-"bold">Findings</span><br>
-						<textarea rows="7" cols="120"  name="findings" id="findings" value='{{old('findings', 'Please provide Findings for your research in 150 words or less') }}' form="research_form" placeholder="Please provide information in 300 words or less."></textarea><br>
+						<textarea rows="7" cols="120"  name="findings" id="findings" value='{{old('findings', 'Please provide Findings for your research in 100 words or less') }}' form="research_form" placeholder="Please provide information in 100 words or less."></textarea><br>
 
 						<br>
 						<span class="bold">Discussion</span><br>
-						<textarea rows="7" cols="120" name="discussion" id="discussions" value='{{old('discussion', 'Please provide Discussion for your research in 150 words or less') }}' form="research_form" placeholder="Please provide information in 300 words or less."></textarea><br>
+						<textarea rows="7" cols="120" name="discussion" id="discussions" value='{{old('discussion', 'Please provide Discussion for your research in 100 words or less') }}' form="research_form" placeholder="Please provide information in 100 words or less."></textarea><br>
 
 						<br>
 						<span class="bold">Impact on Coaching Practice</span><br>
-						<textarea rows="7" cols="120" name="impact" id="impact" value='{{old('discussion', 'Please provide an explanation on the Impact of your research on Coaching Practice in 150 words or less') }}' form="research_form" placeholder="Please provide information in 300 words or less."></textarea><br>
+						<textarea rows="7" cols="120" name="impact" id="impact" value='{{old('discussion', 'Please provide an explanation on the Impact of your research on Coaching Practice in 100 words or less') }}' form="research_form" placeholder="Please provide information in 100 words or less."></textarea><br>
 
 						<br>
 						<span class="bold">Abstract</class><br>

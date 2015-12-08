@@ -27,7 +27,6 @@ class ResearchesTableSeeder extends Seeder
         'discussion'  => $faker->text($maxNbChars = 500),
         'impact'      => $faker->text($maxNbChars = 500),
         'abstract'    => $faker->text($maxNbChars = 500),
-        'user_id'     => p4\User::find($i)->id
          ]);
         }
      }

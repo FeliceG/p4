@@ -37,9 +37,5 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
-    public function research()
-    {
-      return $this->hasOne('\p4\Research');
-    }
 
   }

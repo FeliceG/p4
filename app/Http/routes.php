@@ -69,15 +69,19 @@ Route::post('/register', 'Auth\AuthController@postRegister');
 Route::group(['middleware' => 'auth'], function() {
   Route::get('/research/add', 'IOCController@getCreateResearch');
   Route::post('/research/add', 'IOCController@postCreateResearch');
+
+  Route::get('/research/show', 'IOCController@getShowResearch');
+  Route::post('/research/show', 'IOCController@postShowResearch');
   Route::get('/research/edit', 'IOCController@getEditResearch');
   Route::post('/research/edit', 'IOCController@postEditResearch');
+
   Route::get('/research/delete', 'IOCController@getDeleteResearch');
   Route::post('/research/delete', 'IOCController@postDeleteResearch');
 
   Route::get('/authors/add', 'IOCController@getCreateAuthors');
   Route::post('/authors/add', 'IOCController@postCreateAuthors');
-  Route::get('/authors/edit', 'IOCController@getEditAuthors');
-  Route::post('/authors/edit', 'IOCController@postEditAuthors');
+//  Route::get('/authors/edit', 'IOCController@getEditAuthors');
+//  Route::post('/authors/edit', 'IOCController@postEditAuthors');
 });
 
 

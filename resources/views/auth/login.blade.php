@@ -7,8 +7,8 @@
 <h1>Login</h1>
 @if(count($errors) > 0)
   <ul class='errors'>
-    @foreach ($errors-­‐>all() as $error)
-      <li><span class='fa fa-­‐exclamation-­‐circle'></span> {{ $error }}</li>
+    @foreach ($errors->all() as $error)
+      <li><span class='fa fa-­exclamation-­circle'></span> {{ $error }}</li>
     @endforeach
   </ul>
 @endif
@@ -17,7 +17,7 @@
 
   {!! csrf_field()!!}
 
-    <div class='form-­‐group'>
+    <div class='form-­group'>
       <label for='email'>Email</label>
       <input  type='text'
               name='email'
@@ -25,7 +25,7 @@
               value='{{ old('email') }}'>
     </div>
 
-    <div class='form-­‐group'>
+    <div class='form-­group'>
       <label for='password'>Password</label>
       <input type='password'
             name='password'
@@ -33,7 +33,7 @@
             value='{{ old('password') }}'>
     </div>
 
-    <div class='form-­‐group'>
+    <div class='form-­group'>
       <input type='checkbox'
              name='remember'
              id='remember'>

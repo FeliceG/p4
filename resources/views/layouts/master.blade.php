@@ -28,7 +28,7 @@
             <li><a href='/'>Home</a></li>
             <li><a href='/research/add'>Submit Paper/Poster</a></li>
             <li><a href='/research/edit'>Edit Submission</a></li>
-            <li><a href='/authors/edit'>Edit Authors</a></li>
+<!--            <li><a href='/authors/edit'>Edit Authors</a></li>    -->
             <li><a href='/research/delete'>Delete Submission</a></li>
             <li><a href='/logout'>Log Out</a></li>
           @else

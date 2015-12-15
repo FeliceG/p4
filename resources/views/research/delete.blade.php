@@ -4,79 +4,63 @@
 
 
 @section('content')
+
+
 <h1>Coaching in Leadership and Healthcare 2016: Poster Application</h1>
 
 <div class="content">
-<p>Please complete the form below to submit your research poster for consideration in the Coaching in Leadership and Healthcare 2016 conference, scheduled September 16-17, 2016.</p>
+	<p>To delete your submission for consideration in the Coaching in Leadership and Healthcare 2016 conference,
+		click the "DELETE" button below to confirm you would like to continue with the delete process.</p>
 
-<!-- Form to gather user data -->
+		@if(count($errors)  > 0)
+		  <ul>
+		      @foreach ($errors->all() as $error)
+		        <li>{{ $error }}</li>
+		      @endforeach
+		  </ul>
+		@endif
 
+<div id="flash_message"></div>
+
+		<!-- Form to gather user data -->
+
+		<br>
+				<form method="POST" id="delete_form" action="/research/delete">
+
+				<!-- CSRF token for safety -->
+				<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>" >
+				<input type="hidden" name="research_id" value=" {{ $research->id }} " >
+
+				<br>
+						<fieldset>
+								<legend>Research Information</legend>
+								<p>Your submission is for a research: {{ $research->type }} </p>
+								<p>Title: {{ $research->title }} </p>
+								<p>Background and Objectives: {{ $research->background }} </p>
+								<p>Design and Methods: {{ $research->design }} </p>
+								<p>Findings: {{ $research->findings }} </p>
+								<p>Discussion: {{ $research->discussion }} </p>
+								<p>Impact on Coaching Practice: {{ $research->impact }} </p>
+						  	<p>Abstract: {{ $research->abstract }} </p>
+								<br>
+
+
+						</fieldset>
 <br>
-<form method="POST" id="authorform" action="/show">
-<ul class="list">
+						<fieldset>
+								<legend>Authors</legend>
+									<br>
+													@foreach($research->author as $author)
+														Name: {{ $author['first_name'] }} {{ $author['last_name'] }}<br>
+														Organization: {{ $author['organization'] }}<br>
+														Email: {{ $author['email'] }}<br>
+													  <br>
+													@endforeach
+														</p>
+												</fieldset>
 
-<!-- CSRF token for safety -->
-<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>" >
-
-<fieldset>
-<legend>Primary Author Contact Information</legend>
-<input type="text" name="first_name" placeholder="First Name">&nbsp;&nbsp;&nbsp;
-<input type="text" name="last_name" placeholder="Last Name">&nbsp;&nbsp;&nbsp;
-<input type="text" name="institution" placeholder="Institutional Affiliation">&nbsp;&nbsp;&nbsp;
-<input type="email" name="email" placeholder="Email">&nbsp;&nbsp;&nbsp;
-<input type="tel" name="phone" placeholder="Phone Number">&nbsp;&nbsp;&nbsp;
-</fieldset>
-
-<br>
-<fieldset id="second_authors">
-<legend>Secondary Authors Contact Information</legend>
-<input type="text" name="first_name" placeholder="First Name">&nbsp;&nbsp;&nbsp;
-<input type="text" name="last_name" placeholder="Last Name">&nbsp;&nbsp;&nbsp;
-<input type="text" name="institution" placeholder="Institutional Affiliation">&nbsp;&nbsp;&nbsp;
-<input type="email" name="email" placeholder="Email">&nbsp;&nbsp;&nbsp;
-<input type="tel" name="phone" placeholder="Phone Number">&nbsp;&nbsp;&nbsp;
-</fieldset>
-<br>
-<fieldset>
-<legend>Research Information</legend>
-<p>Please indicate if you are submitting a <span class="bold">PAPER</span> or <span class="bold">POSTER</span>:<select name="paper_poster">
-			      <option value="paper">PAPER</option>
-			      <option value="poster">POSTER</option>
-					           </select>
-<br>
-<br>
-<span class="bold">Title</span><br>
-<input type="text" name="title" placeholder="Enter title"><br>
-
-<br>
-<span class="bold">Background and Objectives</span><br>
-<textarea rows="7" cols="120" name="title" form="authorform" placeholder="Please provide information in 150 words or less."></textarea><br>
-
-<br>
-<span class="bold">Design and Methods</span><br>
-<textarea rows="7" cols="120" name="design" form="authorform" placeholder="Please provide information in 150 words or less."></textarea><br>
-
-<br>
-<span class-"bold">Findings</span><br>
-<textarea rows="7" cols="120"  name="findings" form="authorform" placeholder="Please provide information in 150 words or less."></textarea><br>
-
-<br>
-<span class="bold">Discussion</span><br>
-<textarea rows="7" cols="120" name="discussion" form="authorform" placeholder="Please provide information in 150 words or less."></textarea><br>
-
-<br>
-<span class="bold">Impact on Coaching Practice</span><br>
-<textarea rows="7" cols="120" name="impact" form="authorform" placeholder="Please provide information in 150 words or less."></textarea><br>
-
-<br>
-<span class="bold">Abstract</class><br>
-<textarea rows="7" cols="120" "name="abstract" form="authorform" placeholder="Please provide information in 150 words or less."></textarea><br>
-
-</fieldset>
-
-<br>
-<input type ="submit" value="SUBMIT">
-</form>
-
+				<br>
+				<input type ="submit" value="DELETE">
+				</form>
 </div>
 @stop

@@ -15,7 +15,7 @@
 
 <div class="container">
 
-  <header class="title">
+  <header class="logo">
 	<img src="/ioc_logo.gif" alt="IOC logo" >
 	<br>
 	<br>
@@ -30,7 +30,7 @@
             <li><a href='/research/edit'>Edit Submission</a></li>
 <!--            <li><a href='/authors/edit'>Edit Authors</a></li>    -->
             <li><a href='/research/delete'>Delete Submission</a></li>
-            <li><a href='/logout'>Log Out</a></li>
+            <li><a href='/logout'>Log Out {{ $user->name }}</a></li>
           @else
             <li><a href='/'>Home</a></li>
             <li><a href='/eligibility'>Eligibility</a></li>
@@ -43,6 +43,8 @@
         </ul>
     </nav>
 
+<br>
+<div class='flash_message'></div>
 	<br>
 	<br>
 <section>

@@ -41,19 +41,22 @@ class IOCController extends Controller {
 		else
 			{
 				$author = \p4\Author::where('email', '=', $user->email)->get();
+				dump($author);
 
-				if (is_null('author'))
+
+				if (sizeof($author)==0)
 						{
 							\Session::flash('flash_message', 'No submission entry associated with your email address found. You will be redirected to create a new submission.');
-								return redirect('research.add');
+								return view('research.add');
 						}
 				else
 					{
+							echo 'here in getCreateResearch';
 							$research = \p4\Research::with('author')->find($author['0']['research_id']);
 							if (is_null($research))
 									{
 										\Session::flash('flash_message', 'No submission entry associated with your email address was found. You will be redirected to create a new submission.');
-										redirect ('research.add');
+										return view('research.add');
 									}
 					 }
 			 }
@@ -167,7 +170,7 @@ public function getEditResearch() {
 			if (is_null('author'))
 					{
 						\Session::flash('flash_message', 'ID for Research Not Found');
-						return redirect('research.add');
+						return redirect('research/add');
 					}
 			else
 						{
@@ -177,7 +180,7 @@ public function getEditResearch() {
 							if (is_null($researches))
 									{
 										\Session::flash('flash_message', 'ID for Research Not Found');
-										redirect ('research.add');
+										return redirect ('research/add');
 									}
 					   }
 
@@ -243,5 +246,63 @@ public function getEditResearch() {
 				session(['research' => $research]);
 			  return redirect('/research/show');
 	}
+
+
+	public function getConfirmDelete() {
+
+		$user = \Auth::user();
+		$author = \p4\Author::where('email', '=', $user->email)->get();
+		dump($author);
+
+		if (is_null('author'))
+				{
+					\Session::flash('flash_message', 'ID for Research Not Found');
+					return redirect('research.add');
+				}
+		else
+					{
+						$research = \p4\Research::with('author')->find($author['0']['research_id']);
+						dump($research);
+						session(['research' => $research]);
+						if (is_null($research))
+								{
+									\Session::flash('flash_message', 'ID for Research Not Found');
+									redirect ('research.add');
+								}
+					 }
+
+		return view('/research/delete')->with(['research' => $research]);
+}
+
+
+	public function postDoDelete() {
+
+				$research = session('research');
+				dump($research);
+
+				#remove authors first
+				$submission = \p4\Research::find($research->id);
+				dump($submission);
+				$authors = \p4\Author::where('research_id', '=', $research->id);
+				dump($authors);
+
+
+	//					if(is_null($submission)) {
+	//						\Session::flash('flash_message', 'Research submission was not found');
+	//						return redirect('research/add');
+	//					}
+
+//				$authors = \p4\Author::find($research->research_id);
+//				if(is_null($authors)) {
+//					\Session::flash('flash_message', 'Authors for research submission were not found.');
+//					return redirect('research/edit');
+//				}
+
+				$authors->delete();
+				$submission->delete();
+
+		return view('/research/add');
+	}
+
 
 }

@@ -144,6 +144,7 @@ return [
         p4\Providers\AuthServiceProvider::class,
         p4\Providers\EventServiceProvider::class,
         p4\Providers\RouteServiceProvider::class,
+        'p4\Providers\ComposerServiceProvider'
 
     ],
 

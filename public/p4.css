@@ -3,7 +3,7 @@ html, body
         height: 100%;
       }
 
-.container
+.container, .container img
       {
 		      margin-left : 5em;
           padding: 0;
@@ -14,9 +14,9 @@ html, body
       }
 
 .container img
-            {
-              margin-left: 8em;
-            }
+                  {
+                    margin-left: -.1em;
+                  }
 
 nav   {
       		font-size : 1.1em;

@@ -41,7 +41,6 @@ class IOCController extends Controller {
 		else
 			{
 				$author = \p4\Author::where('email', '=', $user->email)->get();
-				dump($author);
 
 
 				if (sizeof($author)==0)

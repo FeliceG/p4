@@ -33,7 +33,7 @@
 <!-- CSRF token for safety -->
     <input type="hidden" name="_token" value="{{ csrf_token() }}" >
 
-    <input type="text" form="authorform" name="research_id" value=" {{ session('research_id') }}  " >
+    <input type="hidden" form="authorform" name="research_id" value=" {{ session('research_id') }}  " >
 
         <fieldset>
             <legend>Primary Author Contact Information</legend>
@@ -108,30 +108,6 @@
                 value='{{ old('email2', '') }}' >&nbsp;&nbsp;&nbsp;
         <br>
         <br>
-<!--            <input type="text" form="authorform" id="first3" name="first3" placeholder="First Name" value='{{ old('first3', '') }}'>&nbsp;&nbsp;&nbsp;
-            <input type="text" form="authorform" id="last3" name="last3" size="35" placeholder="Last Name" value='{{ old('last3', '') }}'>&nbsp;&nbsp;&nbsp;
-            <input type="text" form="authorform" id="organization3" name="organization3" size="55" placeholder="Institutional Affiliation" value='{{ old('organization3', '') }}'>&nbsp;&nbsp;&nbsp;
-            <input type="email" form="authorform" id="email3" name="email3" size="35" placeholder="Email" value='{{ old('email3', '') }}' >&nbsp;&nbsp;&nbsp;
-        <br>
-        <br>
-            <input type="text" form="authorform" id="first4" name="first4" placeholder="First Name" value='{{ old('first4', '') }}'>&nbsp;&nbsp;&nbsp;
-            <input type="text" form="authorform" id="last4" name="last4" size="35" placeholder="Last Name" value='{{ old('last4', '') }}'>&nbsp;&nbsp;&nbsp;
-            <input type="text" form="authorform" id="organization4" name="organization4" size="55" placeholder="Institutional Affiliation" value='{{ old('organization4', '') }}'>&nbsp;&nbsp;&nbsp;
-            <input type="email" form="authorform" id="email4" name="email4" size="35" placeholder="Email" value='{{ old('email4', '') }}' >&nbsp;&nbsp;&nbsp;
-        <br>
-        <br>
-            <input type="text" form="authorform" id="first5" name="first5" placeholder="First Name" value='{{ old('first5', '') }}'>&nbsp;&nbsp;&nbsp;
-            <input type="text" form="authorform" id="last5" name="last5" size="35" placeholder="Last Name" value='{{ old('last5', '') }}'>&nbsp;&nbsp;&nbsp;
-            <input type="text" form="authorform" id="organization5" name="organization5" size="55" placeholder="Institutional Affiliation" value='{{ old('organization5', '') }}'>&nbsp;&nbsp;&nbsp;
-            <input type="email" form="authorform" id="email5" name="email5" size="35" placeholder="Email" value='{{ old('email5', '') }}' >&nbsp;&nbsp;&nbsp;
-        <br>
-        <br>
-            <input type="text" form="authorform" id="first6" name="first6" placeholder="First Name" value='{{ old('first6', '') }}'>&nbsp;&nbsp;&nbsp;
-            <input type="text" form="authorform" id="last6" name="last6" size="35" placeholder="Last Name" value='{{ old('last6', '') }}'>&nbsp;&nbsp;&nbsp;
-            <input type="text" form="authorform" id="organization6" name="organization6" size="55" placeholder="Institutional Affiliation" value='{{ old('organization6', '') }}'>&nbsp;&nbsp;&nbsp;
-            <input type="email" form="authorform" id="email6" name="email6" size="35" placeholder="Email" value='{{ old('email6', '') }}' >&nbsp;&nbsp;&nbsp;
-        <br>
-        <br>  -->
       </fieldset>
 
 

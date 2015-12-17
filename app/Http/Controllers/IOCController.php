@@ -51,7 +51,6 @@ class IOCController extends Controller {
 						}
 				else
 					{
-							echo 'here in getCreateResearch';
 							$research = \p4\Research::with('author')->find($author['0']['research_id']);
 							if (is_null($research))
 									{

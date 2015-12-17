@@ -252,7 +252,6 @@ public function getEditResearch() {
 
 		$user = \Auth::user();
 		$author = \p4\Author::where('email', '=', $user->email)->get();
-		dump($author);
 
 		if (is_null('author'))
 				{
@@ -262,7 +261,6 @@ public function getEditResearch() {
 		else
 					{
 						$research = \p4\Research::with('author')->find($author['0']['research_id']);
-						dump($research);
 						session(['research' => $research]);
 						if (is_null($research))
 								{
@@ -278,13 +276,10 @@ public function getEditResearch() {
 	public function postDoDelete() {
 
 				$research = session('research');
-				dump($research);
 
 				#remove authors first
 				$submission = \p4\Research::find($research->id);
-				dump($submission);
 				$authors = \p4\Author::where('research_id', '=', $research->id);
-				dump($authors);
 
 
 	//					if(is_null($submission)) {

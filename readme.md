@@ -1,4 +1,4 @@
-# P4: Password Generator Website
+# P4: Research Paper and Poster Submissions
 
 ## Live URL
 <http://p4.felicenapolitano.me>

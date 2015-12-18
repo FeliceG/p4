@@ -5,8 +5,8 @@
 	@yield('title', "Problem #4&#8212;Final Project")
     </title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick-theme.css"/>
     <link href="/p4.css"  rel="stylesheet" />
     @yield('head')
 </head>
@@ -35,17 +35,15 @@
             <li><a href='/'>Home</a></li>
             <li><a href='/eligibility'>Eligibility</a></li>
             <li><a href='/guidelines'>Guidelines</a></li>
-            <li><a href='/poster'>Past Poster Winners</a></li>
-            <li><a href='/paper'>Past Paper Submissions</a></li>
-            <li><a href='/login'>Log In</a></li>
+            <li><a href='/poster'>Past Posters</a></li>
+            <li><a href='/paper'>Past Papers</a></li>
+            <li><a href='/login'>Login</a></li>
             <li><a href='/register'>Register</a></li>
           @endif
         </ul>
     </nav>
 
-<br>
 <div class='flash_message'></div>
-	<br>
 	<br>
 <section>
         @yield('content')
@@ -60,7 +58,7 @@
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="/slick/slick.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
 <script src="/ioc.js"></script>
 	@yield('body')
 

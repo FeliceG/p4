@@ -2,9 +2,9 @@
 
 @section('content')
 
-  <p> Already have an account? <a href='/login'>Login here....</a></p>
+  <h2>Register</h2>
 
-  <h1>Register</h1>
+  <p class='bold'> Already have an account? <a href='/login'>Login here....</a></p>
 
   @if(count($errors) > 0)
     <ul class='errors'>
@@ -19,26 +19,26 @@
   {!! csrf_field() !!}
 
   <div class='form-group'>
-    <label for'name'>Name</label>
+    <label for'name' class='bold'>Name:&nbsp;&nbsp;</label>
     <input type='text' name='name' id='name' value='{{ old('name') }}'>
   </div>
 
   <div class='form-group'>
-    <label for'email'>Email</label>
+    <label for'email' class='bold'>Email:&nbsp;&nbsp;</label>
     <input type='text' name='email' id='email' value='{{ old('email') }}'>
   </div>
 
   <div class='form-group'>
-    <label for'password'>Password</label>
+    <label for'password' class='bold'>Password:&nbsp;&nbsp;</label>
     <input type='password' name='password' id='password'>
   </div>
 
   <div class='form-group'>
-    <label for'password_confirmation'>Confirm Password</label>
+    <label for'password_confirmation' class='bold'>Confirm Password:&nbsp;&nbsp;</label>
     <input type='password' name='password_confirmation' id='password_confirmation'>
   </div>
-
-  <button type='submit' class='btn btn-primary'>Register</button>
+<br>
+  <button type='submit' class='btn btn-primary bold'>Register</button>
 
 </form>
 

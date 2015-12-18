@@ -18,7 +18,7 @@
     	  </ul>
   	<p>Papers and posters can describe original empirical research (quantitative, qualitative or mixed-methods research), meta-analyses, and theoretical discussions. </p>
 
-  	<p>Each author can submit up to two different submissions of paper and/or poster.</p>
+  	<p>Each author can submit up to either one paper or one poster.</p>
 
       	<ul>
       		<li>Primary authors must be investigators who are currently affiliated with academic institutions, are doctoral level professionals (PhD, MD, EdD) in other institutions, or are graduate students and other professionals with doctoral level mentors.</li>

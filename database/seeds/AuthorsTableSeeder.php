@@ -16,7 +16,7 @@ class AuthorsTableSeeder extends Seeder
 
         for ($i=1; $i < 13; $i++)
         {
-        for ($n=0; $n < 3; $n++) {
+        for ($n=0; $n < 2; $n++) {
         DB::table('authors')->insert([
         'created_at'  => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at'  => Carbon\Carbon::now()->toDateTimeString(),

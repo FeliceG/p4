@@ -10,7 +10,8 @@ This website collects paper and poster submissions for the Coaching in Leadershi
 http://screencast.com/t/VAIVKnQLFjO
 
 ##Details for teaching team
-No login required.
+This application associates a user email with a submission author email. At this time, a user can only make one submission. Following this course, the code will be updated so users/authors can submit more than one paper and/or poster.
 
 ##Outside code
 fzanitto/Faker used to generate all fake data in this application.
+kenwheeler/slick is used to create the image gallery on the Poster Page.

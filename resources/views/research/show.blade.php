@@ -5,10 +5,9 @@
 
 @section('content')
 
-
-<h1>Coaching in Leadership and Healthcare 2016: Poster Application</h1>
-
 <div class="content">
+	<h2>Coaching in Leadership and Healthcare 2016: Poster Application</h2>
+
 	<p>Thank you for your research submission for consideration in the Coaching in Leadership and Healthcare 2016 conference, scheduled September 16-17, 2016.
 	Your submission is listed below. To make changes to your submission, click the "Edit" button below.</p>
 
@@ -33,27 +32,27 @@
 
 				<br>
 						<fieldset>
-								<legend>Research Information</legend>
-								<p>Your submission is for a research: {{ $research->type }} </p>
-								<p>Title: {{ $research->title }} </p>
-								<p>Background and Objectives: {{ $research->background }} </p>
-								<p>Design and Methods: {{ $research->design }} </p>
-								<p>Findings: {{ $research->findings }} </p>
-								<p>Discussion: {{ $research->discussion }} </p>
-								<p>Impact on Coaching Practice: {{ $research->impact }} </p>
-						  	<p>Abstract: {{ $research->abstract }} </p>
+								<legend><span class="bold">Research Information</span></legend>
+								<p><span class="bold">Your submission is for a research:</span> {{ $research->type }} </p>
+								<p><span class="bold">Title:</span> {{ $research->title }} </p>
+								<p><span class="bold">Background and Objectives:</span> {{ $research->background }} </p>
+								<p><span class="bold">Design and Methods:</span> {{ $research->design }} </p>
+								<p><span class="bold">Findings:</span> {{ $research->findings }} </p>
+								<p><span class="bold">Discussion:</span> {{ $research->discussion }} </p>
+								<p><span class="bold">Impact on Coaching Practice: </span>{{ $research->impact }} </p>
+						  	<p><span class="bold">Abstract:</span> {{ $research->abstract }} </p>
 								<br>
 
 
 						</fieldset>
 <br>
 						<fieldset>
-								<legend>Authors</legend>
+								<legend><span class="bold">Authors</span></legend>
 									<br>
 													@foreach($research->author as $author)
-														Name: {{ $author['first_name'] }} {{ $author['last_name'] }}<br>
-														Organization: {{ $author['organization'] }}<br>
-														Email: {{ $author['email'] }}<br>
+														<span class="bold">Name:</span> {{ $author['first_name'] }} {{ $author['last_name'] }}<br>
+														<span class="bold">Organization:</span> {{ $author['organization'] }}<br>
+														<span class="bold">Email:</span> {{ $author['email'] }}<br>
 													  <br>
 													@endforeach
 														</p>

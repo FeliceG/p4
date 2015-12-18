@@ -42,7 +42,6 @@ class IOCController extends Controller {
 			{
 				$author = \p4\Author::where('email', '=', $user->email)->get();
 
-
 				if (sizeof($author)==0)
 						{
 							\Session::flash('flash_message', 'No submission entry associated with your email address found. You will be redirected to create a new submission.');
@@ -78,23 +77,35 @@ class IOCController extends Controller {
 					'abstract'  => 'required|min:40'
 		   ]
 		);
+
 		$user = \Auth::user();
-	//Code to enter research paper or poster into database table
-		$research = new \p4\Research();
-		$research->type = $request->paper_poster;
-		$research->title = $request->title;
-		$research->background = $request->background;
-		$research->findings = $request->findings;
-		$research->design = $request->design;
-		$research->discussion = $request->discussion;
-		$research->impact = $request->impact;
-		$research->abstract = $request->abstract;
+		$author = \p4\Author::where('email', '=', $user->email)->get();
 
-		$research->save();
+		if (sizeof($author)==0)
+			{
+		//Code to enter research paper or poster into database table
+				$research = new \p4\Research();
+				$research->type = $request->paper_poster;
+				$research->title = $request->title;
+				$research->background = $request->background;
+				$research->findings = $request->findings;
+				$research->design = $request->design;
+				$research->discussion = $request->discussion;
+				$research->impact = $request->impact;
+				$research->abstract = $request->abstract;
 
-		$research_id = $research->id;
-		session(['research_id' => $research_id]);
-			return redirect('/authors/add');
+				$research->save();
+
+				$research_id = $research->id;
+				session(['research_id' => $research_id]);
+					return redirect('/authors/add');
+			}
+		else {
+				echo 'in create Research and found another entry for this email address';
+				$research = \p4\Research::with('author')->where('id', '=', $author->research_id)->get();
+			  session(['research' => $research]);
+			  return redirect('/research/show');
+			}
 	}
 
 	public function getCreateAuthors() {
@@ -112,37 +123,41 @@ class IOCController extends Controller {
 					'email1'  => 'required|email',
 		   ]
 		);
+		$author = \p4\Author::where('research_id', '=', $request->research_id)->count();
 
-		for($i=1; $i<3; $i++)
+		if ($author == 0)
 		{
-		$author = new \p4\Author();
-		if($i == '1')
-			{
-	    $author->first_name = $request->first1;
-			$author->last_name = $request->last1;
-			$author->organization = $request->organization1;
-			$author->email = $request->email1;
-		 	$author->research_id = $request->research_id;
-			$author->type = "P";
+				for($i=1; $i<3; $i++)
+				{
+				$author = new \p4\Author();
+				if($i == '1')
+					{
+			    $author->first_name = $request->first1;
+					$author->last_name = $request->last1;
+					$author->organization = $request->organization1;
+					$author->email = $request->email1;
+				 	$author->research_id = $request->research_id;
+					$author->type = "P";
+					}
+				else
+					{
+					 $author->first_name = $request->first2;
+			 		 $author->last_name = $request->last2;
+			 		 $author->organization = $request->organization2;
+			 		 $author->email = $request->email2;
+			 		 $author->research_id = $request->research_id;
+			 		 $author->type = "S";
+					}
+					 $author->save();
+				}
 			}
-		else
-			{
-			 $author->first_name = $request->first2;
-	 		 $author->last_name = $request->last2;
-	 		 $author->organization = $request->organization2;
-	 		 $author->email = $request->email2;
-	 		 $author->research_id = $request->research_id;
-	 		 $author->type = "S";
-			}
-			 $author->save();
-		}
 
 	\Session::flash('flash_message', 'Primary and secondary authors added.');
 
-	$research = \p4\Research::with('author')->find($author->research_id);
+	$research = \p4\Research::with('author')->find($request->research_id);
   session(['research' => $research]);
 
-  return redirect('/research/show');
+ return redirect('/research/show');
 }
 
 public function getShowResearch() {
@@ -212,6 +227,7 @@ public function getEditResearch() {
 			$research->type = $request->paper_poster;
 			$research->title = $request->title;
 			$research->background = $request->background;
+			$research->findings = $request->findings;
 			$research->design = $request->design;
 			$research->discussion = $request->discussion;
 			$research->impact = $request->impact;
@@ -279,17 +295,6 @@ public function getEditResearch() {
 				$submission = \p4\Research::find($research->id);
 				$authors = \p4\Author::where('research_id', '=', $research->id);
 
-
-	//					if(is_null($submission)) {
-	//						\Session::flash('flash_message', 'Research submission was not found');
-	//						return redirect('research/add');
-	//					}
-
-//				$authors = \p4\Author::find($research->research_id);
-//				if(is_null($authors)) {
-//					\Session::flash('flash_message', 'Authors for research submission were not found.');
-//					return redirect('research/edit');
-//				}
 
 				$authors->delete();
 				$submission->delete();

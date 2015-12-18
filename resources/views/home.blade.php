@@ -7,7 +7,7 @@
 
     <h1>Home</h1>
 
-  	<p>Presentations of research on all aspects of Coaching are invited for the annual Coaching in Leadership and Healthcare Conference: Theory, Practice and Results. The conference is organized by the Institute of Coaching, McLean Hospital, and Harvard Medical School and will be held on September 25-26, 2015 at The Renaissance Boston Waterfront Hotel, Boston, MA.</p>
+  	<p>Presentations of research on all aspects of Coaching are invited for the annual Coaching in Leadership and Healthcare Conference: Theory, Practice and Results. The conference is organized by the Institute of Coaching, McLean Hospital, and Harvard Medical School and will be held on September 25-26, 2016 at The Renaissance Boston Waterfront Hotel, Boston, MA.</p>
 
   	<p class="bold" class="line">Types of Submissions</p>
 
@@ -18,7 +18,7 @@
     </ul>
   	<p class="bold" class="line">Deadline Information</p>
 
-  	<p>The deadline for the receipt of paper and poster applications online is <span class="bold" class="red"> Tuesday, June 30, 2015 by 11:59 PM EDT.</span></p>
+  	<p>The deadline for the receipt of paper and poster applications online is <span class="bold" class="red"> Tuesday, June 30, 2016 by 11:59 PM EDT.</span></p>
 
 
 </div>

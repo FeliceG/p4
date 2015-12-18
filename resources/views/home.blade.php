@@ -20,6 +20,7 @@
 
   	<p>The deadline for the receipt of paper and poster applications online is <span class="bold" class="red"> Tuesday, June 30, 2016 by 11:59 PM EDT.</span></p>
 
+    <h5>To submit a poster or paper, please <a href="/register">register</a> to create an account. Once registered, you will be redirected to the submission form.</h5>
 
 </div>
 
